@@ -1,23 +1,8 @@
 # does-github-support-mermaid
-
-```mermaid
-
-graph TD
-
-start(Does Github support mermaid flowcharts?)
-
-choice{Is this displayed as a flowchart?}
-
-does(Awesome!)
-
-doesnt(Better switch to gitlab..)
-
-start-->choice
-
-choice--Yes-->does
-
-choice--No-->doesnt
-
+```sequence
+    WebUI->Next Gen Auth: Login with ibm sso code
+    Next Gen Auth->IBM SSO: Retrospect with sso code
+    IBM SSO-->Next Gen Auth: Return jwt information
+    Next Gen Auth->>Next Gen Auth: Check if the user is in whitelist
+    Next Gen Auth-->WebUI: Return the username, email.
 ```
-
-This should look like [this](https://gitlab.com/mpnsk/does-gitlab-support-mermaid/blob/master/README.md)
